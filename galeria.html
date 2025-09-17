@@ -87,60 +87,10 @@
                     aria-expanded="false"
                     >TEMPORADAS</a
                   >
-                  <ul class="dropdown-menu text-left">
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="temporadas.html?temporada=1"
-                      >
-                        <img
-                          src="./img/posters/westworld-season1-thumb.jpg"
-                          alt="Poster Temporada 1"
-                          class="dropdown-poster"
-                        />
-                        T1 - The Maze
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="temporadas.html?temporada=2"
-                      >
-                        <img
-                          src="./img/posters/westworld-season2-thumb.jpg"
-                          alt="Poster Temporada 2"
-                          class="dropdown-poster"
-                        />
-                        T2 - The Door
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="temporadas.html?temporada=3"
-                      >
-                        <img
-                          src="./img/posters/westworld-season3-thumb.jpg"
-                          alt="Poster Temporada 3"
-                          class="dropdown-poster"
-                        />
-                        T3 - The New World
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="temporadas.html?temporada=4"
-                      >
-                        <img
-                          src="./img/posters/westworld-season4-thumb.jpg"
-                          alt="Poster Temporada 4"
-                          class="dropdown-poster"
-                        />
-                        T4 - The Choice
-                      </a>
-                    </li>
-                  </ul>
+                  <ul
+                    class="dropdown-menu text-left"
+                    id="temporadas-submenu"
+                  ></ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./galeria.html">GALERIA</a>
@@ -484,42 +434,7 @@
       >
         <section class="col-12 col-lg-4 footer-temporadas text-center">
           <h5>Temporadas</h5>
-          <div>
-            <a href="temporadas.html?temporada=1"
-              ><img
-                src="./img/posters/westworld-season1-thumb.jpg"
-                alt="Poster Temporada 1"
-                class="footer-poster"
-              />Temporada 1 - The Maze</a
-            >
-          </div>
-          <div>
-            <a href="temporadas.html?temporada=2"
-              ><img
-                src="./img/posters/westworld-season2-thumb.jpg"
-                alt="Poster Temporada 2"
-                class="footer-poster"
-              />Temporada 2 - The Door</a
-            >
-          </div>
-          <div>
-            <a href="temporadas.html?temporada=3"
-              ><img
-                src="./img/posters/westworld-season3-thumb.jpg"
-                alt="Poster Temporada 3"
-                class="footer-poster"
-              />Temporada 3 - The New World</a
-            >
-          </div>
-          <div>
-            <a href="temporadas.html?temporada=4"
-              ><img
-                src="./img/posters/westworld-season4-thumb.jpg"
-                alt="Poster Temporada 4"
-                class="footer-poster"
-              />Temporada 4 - The Choice</a
-            >
-          </div>
+          <nav id="footer-menu-temporadas"></nav>
         </section>
 
         <section class="col-12 col-lg-4 text-center">
@@ -586,6 +501,6 @@
         });
       });
     </script>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" type="module"></script>
   </body>
 </html>

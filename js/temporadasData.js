@@ -432,3 +432,4 @@ const temporada4 = {
 
 // Colección completa y helpers sencillos
 const westworld = [temporada1, temporada2, temporada3, temporada4];
+export { westworld };

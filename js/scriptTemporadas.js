@@ -1,3 +1,5 @@
+import { westworld } from "./temporadasData.js";
+
 // Espero a que el DOM esté completamente cargado para ejecutar el script.
 document.addEventListener("DOMContentLoaded", function () {
   // Verifico si el array 'westworld' con los datos de las temporadas existe.
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * Cargo los datos de un objeto de temporada en los elementos del DOM.
+ * Cargo los datos del objeto de temporada en los elementos del DOM.
  * @param {object} temporada - El objeto de la temporada para mostrar.
  */
 function cargarDatosTemporada(temporada) {
@@ -45,7 +47,7 @@ function cargarDatosTemporada(temporada) {
     return;
   }
 
-  // Referencia al title
+  // Referencia al title de la pagina
   const title = document.querySelector("title");
 
   // Referencias por clase
@@ -67,7 +69,6 @@ function cargarDatosTemporada(temporada) {
   const iframeTrailer = document.getElementById("iframe-trailer");
 
   // Asigno los datos de la temporada a los elementos del DOM referenciados.
-
   if (title) {
     title.textContent = `Westworld - Temporada ${temporada.id}`;
   }

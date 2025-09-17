@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title  -->
+    <title>Westworld - Inicio</title>
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="/img/westworld-favicon.png" />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Descubrí todo sobre Westworld: sinopsis, temporadas, elenco, curiosidades y análisis de la serie de ciencia ficción creada por Jonathan Nolan y Lisa Joy."
+    />
+    <meta
+      name="keywords"
+      content="Westworld, serie Westworld, ciencia ficción, HBO, Jonathan Nolan, Lisa Joy, Dolores, Maeve, Bernard, the maze, the door, the new world, the choice, análisis Westworld, temporadas Westworld"
+    />
+    <meta name="author" content="Josue do Justo Cardozo" />
+    <!-- Meta Open Graph -->
+    <meta
+      property="og:title"
+      content="Westworld: elenco, temporadas, curiosidades y episodios de la serie"
+    />
+    <meta
+      property="og:description"
+      content="Explora el universo de Westworld: información de las temporadas, personajes, reparto y curiosidades de la serie de HBO."
+    />
+    <meta property="og:image" content="/img/westworld-og.jpg" />
+    <meta property="og:url" content="#" />
+    <meta property="og:type" content="website" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos Propios  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="text-center container-fluid" id="header">
+      <div class="overlay d-lg-flex align-items-start justify-content-center">
+        <!-- Navegacion -->
+        <nav
+          class="navbar sticky-top navbar-expand-lg bg-transparent navbar-light navbar-dark"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="./img/westworld-logo-100.png"
+                alt="Logo Westworld"
+                width="40"
+                height="40"
+              />
+            </a>
+            <button
+              id="btn-menu"
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">INICIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#reparto">REPARTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#temporadas"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >TEMPORADAS</a
+                  >
+                  <ul class="dropdown-menu text-left">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=1"
+                      >
+                        <img
+                          src="./img/posters/westworld-season1-thumb.jpg"
+                          alt="Poster Temporada 1"
+                          class="dropdown-poster"
+                        />
+                        T1 - The Maze
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=2"
+                      >
+                        <img
+                          src="./img/posters/westworld-season2-thumb.jpg"
+                          alt="Poster Temporada 2"
+                          class="dropdown-poster"
+                        />
+                        T2 - The Door
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=3"
+                      >
+                        <img
+                          src="./img/posters/westworld-season3-thumb.jpg"
+                          alt="Poster Temporada 3"
+                          class="dropdown-poster"
+                        />
+                        T3 - The New World
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=4"
+                      >
+                        <img
+                          src="./img/posters/westworld-season4-thumb.jpg"
+                          alt="Poster Temporada 4"
+                          class="dropdown-poster"
+                        />
+                        T4 - The Choice
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./galeria.html">GALERIA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contacto.html">CONTACTO</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          id="header-content"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <!-- Informacion Hero Logo -->
+          <div class="logo">
+            <h1 class="titulo text-wrap">WESTWORLD</h1>
+            <h3 class="subtitulo text-wrap">¡Descubrí más sobre la serie!</h3>
+            <a id="btn-menu" class="btn btn-outline-primary" href="#temporadas">
+              Conocé las temporadas
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Arranca el Main -->
+    <main>
+      <!-- Sección de informacion -->
+      <section class="container text-center" id="informacion">
+        <div class="col-12">
+          <h2 class="titulo">WESTWORLD</h2>
+          <p>
+            Westworld es una serie de televisión de ciencia ficción distópica
+            creada por Jonathan Nolan y Lisa Joy. Producida por HBO, se basa en
+            la película del mismo nombre de 1973 (escrita y dirigida por Michael
+            Crichton) y, en menor medida, en la secuela de 1976 de la película,
+            Futureworld. La historia comienza en Westworld, un parque de
+            atracciones ficticio y tecnológicamente avanzado con temática del
+            Viejo Oeste poblado por androides «anfitriones». El parque atiende a
+            «invitados» que pagan mucho dinero (USD 40.000 al día) y que pueden
+            satisfacer sus fantasías más salvajes dentro del parque sin temor a
+            represalias de los anfitriones, a quienes su programación les impide
+            dañar a los humanos. Más tarde, la trama de la serie se expande al
+            mundo real, a mediados del siglo XXI, donde las vidas de las
+            personas son llevadas y controladas por una poderosa inteligencia
+            artificial llamada Roboam (Rehoboam).
+          </p>
+          <p>
+            Nolan y Joy sirven como productores ejecutivos, junto con J. J.
+            Abrams, Jerry Weintraub y Bryan Burk. La primera temporada se emitió
+            entre el 2 de octubre y el 4 de diciembre de 2016; comprendió diez
+            episodios. En noviembre de 2016, HBO renovó la serie para una
+            segunda temporada de diez episodios, que se emitió del 22 de abril
+            al 24 de junio de 2018. El estreno de Westworld en HBO tuvo las
+            calificaciones de audiencia más altas de la red para un estreno
+            desde el primer episodio de True Detective en 2014. Además, la serie
+            se ubica como la primera temporada más vista de cualquier serie
+            original de HBO. Una tercera temporada de ocho episodios se estrenó
+            el 15 de marzo de 2020. En abril de 2020, HBO renovó la serie para
+            una cuarta temporada, también de ocho episodios, que se estrenó el
+            26 de junio de 2022. En noviembre de 2022, HBO canceló la serie tras
+            cuatro temporadas. La serie ha recibido críticas en gran parte
+            positivas de los críticos, con un elogio particular por su
+            cinematografía, historia y actuación.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seccion de separador -->
+      <section id="separador">
+        <div class="text-center">
+          <img
+            src="./img/westworld-logo-ancho.png"
+            alt="Logo Westworld"
+            width="200"
+          />
+        </div>
+      </section>
+
+      <!-- Sección de reparto -->
+
+      <section class="container text-center" id="reparto">
+        <h2 class="titulo">REPARTO</h2>
+        <!-- INICIO CARROUSEL   -->
+        <div id="personasCarousel" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img
+                      src="./img/reparto/evan-rachel-wood.webp"
+                      alt="Evan Rachel Wood"
+                    />
+                    <h4>Evan Rachel Wood</h4>
+                    <p>Dolores Abernathy</p>
+                  </div>
+                </article>
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img
+                      src="./img/reparto/jeffrey-wright.webp"
+                      alt="Jeffrey Wright"
+                    />
+                    <h4>Jeffrey Wright</h4>
+                    <p>Bernard Lowe</p>
+                  </div>
+                </article>
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img
+                      src="./img/reparto/thandie-newton.webp"
+                      alt="Thandie Newton"
+                    />
+                    <h4>Thandie Newton</h4>
+                    <p>Maeve Millay</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img
+                      src="./img/reparto/anthony-hopkins.webp"
+                      alt="Anthony Hopkins"
+                    />
+                    <h4>Anthony Hopkins</h4>
+                    <p>Robert Ford</p>
+                  </div>
+                </article>
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img
+                      src="./img/reparto/james-marsden.webp"
+                      alt="James Marsden"
+                    />
+                    <h4>James Marsden</h4>
+                    <p>Teddy Flood</p>
+                  </div>
+                </article>
+                <article class="col-10 col-md-6 col-lg-4">
+                  <div class="profile-card">
+                    <img src="./img/reparto/ed-harris.webp" alt="Ed Harris" />
+                    <h4>Ed Harris</h4>
+                    <p>El Hombre de Negro</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles Carrousel -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#personasCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#personasCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+        <!-- FIN CARROUSEL  -->
+
+        <h5>OTROS</h5>
+        <p>
+          Si bien se muestran los actores principales de Westworld, a través de
+          las 4 temporadas se contó con la participación de muchísimos otros
+          actores importantes como por ejemplo: Aaron Paul, Vincent Cassel,
+          Jimmi Simpson, Tessa Thompson, Rodrigo Santoro, Luke Hemsworth, Angela
+          Sarafyan, Simon Quarterman, Katja Herbers, Ben Barnes, Clifton Collins
+          Jr., Aurora Perrineau, y muchos mas.
+        </p>
+      </section>
+
+      <!-- SECCION SEPARADOR -->
+      <section id="separador2">
+        <div class="text-center">
+          <!-- <img src="/img/westworld-logo-200.png" alt="Logo" /> -->
+          <img
+            src="./img/westworld-logo-ancho-negro.png"
+            alt="Logo Westworld"
+            width="200"
+          />
+        </div>
+      </section>
+
+      <!-- Sección de temporadas  -->
+      <section class="container text-center" id="temporadas">
+        <h2 class="titulo">TEMPORADAS</h2>
+        <div class="row">
+          <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card">
+              <img
+                src="./img/posters/westworld-season1.jpg"
+                class="card-img-top"
+                alt="Poster Westworld Temporada 1"
+              />
+
+              <div class="card-body">
+                <h4 class="card-title">Temporada 1</h4>
+                <p class="card-text">
+                  Westworld: Un parque temático futurista ambientado en el
+                  lejano oeste permite a los visitantes cumplir hasta sus
+                  fantasías mas oscuras.
+                </p>
+                <a href="#" class="btn btn-primary">Más información</a>
+                <a
+                  href="temporadas.html?temporada=1"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card">
+              <img
+                src="./img/posters/westworld-season2.jpg"
+                class="card-img-top"
+                alt="Poster Westworld Temporada 2"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Temporada 2</h4>
+                <p class="card-text">
+                  Tras encontrar el centro del Laberinto, los anfitriones se
+                  rebelan contra sus captores mientras buscan un nuevo
+                  propósito.
+                </p>
+                <a href="#" class="btn btn-primary">Más información</a>
+                <a
+                  href="temporadas.html?temporada=2"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card">
+              <img
+                src="./img/posters/westworld-season3.jpg"
+                class="card-img-top"
+                alt="Poster Westworld Temporada 3"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Temporada 3</h4>
+                <p class="card-text">
+                  Después de los eventos de la segunda temporada, Dolores
+                  entabla una relación con Caleb y aprende cómo se trata a los
+                  robots en el mundo real.
+                </p>
+                <a href="#" class="btn btn-primary">Más información</a>
+                <a
+                  href="temporadas.html?temporada=3"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+            <div class="card">
+              <img
+                src="./img/posters/westworld-season4.jpg"
+                class="card-img-top"
+                alt="Poster Westworld Temporada 4"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Temporada 4</h4>
+                <p class="card-text">
+                  Siete años después de la guerra, la humanidad parece ser libre
+                  aunque algunos sospechan que intentan recuperar el control de
+                  los humanos.
+                </p>
+                <a href="#" class="btn btn-primary">Más información</a>
+                <a
+                  href="temporadas.html?temporada=4"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer  -->
+    <footer
+      class="container-fluid align-items-center justify-content-center text-center d-flex"
+      id="footer"
+    >
+      <div
+        class="row container align-items-center justify-content-evenly d-flex"
+        style="max-width: 850px"
+      >
+        <section class="col-12 col-lg-4 footer-temporadas text-center">
+          <h5>Temporadas</h5>
+          <div>
+            <a href="temporadas.html?temporada=1"
+              ><img
+                src="./img/posters/westworld-season1-thumb.jpg"
+                alt="Poster Temporada 1"
+                class="footer-poster"
+              />Temporada 1 - The Maze</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=2"
+              ><img
+                src="./img/posters/westworld-season2-thumb.jpg"
+                alt="Poster Temporada 2"
+                class="footer-poster"
+              />Temporada 2 - The Door</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=3"
+              ><img
+                src="./img/posters/westworld-season3-thumb.jpg"
+                alt="Poster Temporada 3"
+                class="footer-poster"
+              />Temporada 3 - The New World</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=4"
+              ><img
+                src="./img/posters/westworld-season4-thumb.jpg"
+                alt="Poster Temporada 4"
+                class="footer-poster"
+              />Temporada 4 - The Choice</a
+            >
+          </div>
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <img
+            src="./img/westworld-logo-ancho.png"
+            alt="Logo Westworld"
+            width="150"
+          />
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <div class="mb-5">
+            <h5>Producido por</h5>
+            <a href="https://www.hbomax.com/ar/es" target="_blank"
+              ><img src="./img/hbo-logo.png" alt="Logo HBO" width="80"
+            /></a>
+          </div>
+          <h5>Seguinos</h5>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="https://x.com/" target="_blank"
+            ><i class="bi bi-twitter-x"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="bi bi-youtube"></i
+          ></a>
+        </section>
+      </div>
+    </footer>
+    <footer class="text-center container-fluid" id="copyright">
+      <p>Copyright &copy; 2025 Westworld Fan Page</p>
+    </footer>
+    <!-- Fin del Footer  -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title  -->
+    <title>Westworld - Galeria</title>
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="./img/westworld-favicon.png" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos Propios  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-galeria.css" />
+
+    <style>
+      #header {
+        min-height: 60vh;
+      }
+      .overlay {
+        height: 60vh;
+      }
+      #header-content {
+        min-height: 60vh;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="text-center container-fluid" id="header">
+      <div class="overlay d-lg-flex align-items-start justify-content-center">
+        <!-- Navegacion -->
+        <nav
+          class="navbar sticky-top navbar-expand-lg bg-transparent navbar-dark"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img
+                src="./img/westworld-logo-100.png"
+                alt="Logo Westworld"
+                width="40"
+                height="40"
+              />
+            </a>
+            <button
+              id="btn-menu"
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">INICIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#reparto">REPARTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#temporadas"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >TEMPORADAS</a
+                  >
+                  <ul class="dropdown-menu text-left">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=1"
+                      >
+                        <img
+                          src="./img/posters/westworld-season1-thumb.jpg"
+                          alt="Poster Temporada 1"
+                          class="dropdown-poster"
+                        />
+                        T1 - The Maze
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=2"
+                      >
+                        <img
+                          src="./img/posters/westworld-season2-thumb.jpg"
+                          alt="Poster Temporada 2"
+                          class="dropdown-poster"
+                        />
+                        T2 - The Door
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=3"
+                      >
+                        <img
+                          src="./img/posters/westworld-season3-thumb.jpg"
+                          alt="Poster Temporada 3"
+                          class="dropdown-poster"
+                        />
+                        T3 - The New World
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=4"
+                      >
+                        <img
+                          src="./img/posters/westworld-season4-thumb.jpg"
+                          alt="Poster Temporada 4"
+                          class="dropdown-poster"
+                        />
+                        T4 - The Choice
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./galeria.html">GALERIA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contacto.html">CONTACTO</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          id="header-content"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <!-- Informacion Hero Logo -->
+          <div class="logo">
+            <h1 class="titulo text-wrap">GALERIA</h1>
+            <h3 class="subtitulo text-wrap">
+              ¡Explorá nuestra galería de fotos!
+            </h3>
+            <a id="btn-menu" class="btn btn-outline-primary" href="#galeria">
+              Mirá las fotos
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Arranca el Main -->
+    <main>
+      <!-- GALERIA DE FOTOS  -->
+      <section id="galeria" class="container-fluid">
+        <h2 class="text-center">FOTOS DE LAS TEMPORADAS</h2>
+        <div class="gallery-grid">
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria1.jpg"
+              alt="Westworld Galería 1"
+              class="gallery-item"
+              loading="lazy"
+              data-index="0"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria2.jpg"
+              alt="Westworld Galería 2"
+              class="gallery-item"
+              loading="lazy"
+              data-index="1"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria3.jpg"
+              alt="Westworld Galería 3"
+              class="gallery-item"
+              loading="lazy"
+              data-index="2"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria4.jpg"
+              alt="Westworld Galería 4"
+              class="gallery-item"
+              loading="lazy"
+              data-index="3"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria5.jpg"
+              alt="Westworld Galería 5"
+              class="gallery-item"
+              loading="lazy"
+              data-index="4"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria6.jpg"
+              alt="Westworld Galería 6"
+              class="gallery-item"
+              loading="lazy"
+              data-index="5"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria7.jpg"
+              alt="Westworld Galería 7"
+              class="gallery-item"
+              loading="lazy"
+              data-index="6"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria8.jpg"
+              alt="Westworld Galería 8"
+              class="gallery-item"
+              loading="lazy"
+              data-index="7"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria9.jpg"
+              alt="Westworld Galería 9"
+              class="gallery-item"
+              loading="lazy"
+              data-index="8"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria10.jpg"
+              alt="Westworld Galería 10"
+              class="gallery-item"
+              loading="lazy"
+              data-index="9"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria11.jpg"
+              alt="Westworld Galería 11"
+              class="gallery-item"
+              loading="lazy"
+              data-index="10"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria12.jpg"
+              alt="Westworld Galería 12"
+              class="gallery-item"
+              loading="lazy"
+              data-index="11"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria13.jpg"
+              alt="Westworld Galería 13"
+              class="gallery-item"
+              loading="lazy"
+              data-index="12"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria14.jpg"
+              alt="Westworld Galería 14"
+              class="gallery-item"
+              loading="lazy"
+              data-index="13"
+            />
+          </div>
+          <div class="gallery-cell">
+            <img
+              src="./img/galeria/westworld-galeria15.jpg"
+              alt="Westworld Galería 15"
+              class="gallery-item"
+              loading="lazy"
+              data-index="14"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Lightbox con Carrusel Bootstrap -->
+      <div
+        class="modal fade"
+        id="lightboxModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div
+                id="lightboxCarousel"
+                class="carousel slide"
+                data-bs-ride="false"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="./img/galeria/westworld-galeria1.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 1"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria2.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 2"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria3.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 3"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria4.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 4"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria5.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 5"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria6.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 6"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria7.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 7"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria8.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 8"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria9.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 9"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria10.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 10"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria11.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 11"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria12.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 12"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria13.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 13"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria14.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 14"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="./img/galeria/westworld-galeria15.jpg"
+                      class="d-block w-100"
+                      alt="Westworld Galería 15"
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#lightboxCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#lightboxCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer  -->
+    <footer
+      class="container-fluid align-items-center justify-content-center text-center d-flex"
+      id="footer"
+    >
+      <div
+        class="row container align-items-center justify-content-evenly d-flex"
+        style="max-width: 850px"
+      >
+        <section class="col-12 col-lg-4 footer-temporadas text-center">
+          <h5>Temporadas</h5>
+          <div>
+            <a href="temporadas.html?temporada=1"
+              ><img
+                src="./img/posters/westworld-season1-thumb.jpg"
+                alt="Poster Temporada 1"
+                class="footer-poster"
+              />Temporada 1 - The Maze</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=2"
+              ><img
+                src="./img/posters/westworld-season2-thumb.jpg"
+                alt="Poster Temporada 2"
+                class="footer-poster"
+              />Temporada 2 - The Door</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=3"
+              ><img
+                src="./img/posters/westworld-season3-thumb.jpg"
+                alt="Poster Temporada 3"
+                class="footer-poster"
+              />Temporada 3 - The New World</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=4"
+              ><img
+                src="./img/posters/westworld-season4-thumb.jpg"
+                alt="Poster Temporada 4"
+                class="footer-poster"
+              />Temporada 4 - The Choice</a
+            >
+          </div>
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <img
+            src="./img/westworld-logo-ancho.png"
+            alt="Logo Westworld"
+            width="150"
+          />
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <div class="mb-5">
+            <h5>Producido por</h5>
+            <a href="https://www.hbomax.com/ar/es" target="_blank"
+              ><img src="img/hbo-logo.png" alt="Logo HBO" width="80"
+            /></a>
+          </div>
+          <h5>Seguinos</h5>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="https://x.com/" target="_blank"
+            ><i class="bi bi-twitter-x"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="bi bi-youtube"></i
+          ></a>
+        </section>
+      </div>
+    </footer>
+    <footer class="text-center container-fluid" id="copyright">
+      <p>Copyright &copy; 2025 Westworld Fan Page</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Script para el lightbox con Bootstrap
+      document.addEventListener("DOMContentLoaded", () => {
+        const galeria = document.querySelector(".gallery-grid");
+        const modalEl = document.getElementById("lightboxModal");
+        const carouselEl = document.getElementById("lightboxCarousel");
+
+        if (!galeria || !modalEl || !carouselEl) return;
+
+        const modal = new bootstrap.Modal(modalEl);
+        const carousel = new bootstrap.Carousel(carouselEl, {
+          interval: false,
+        });
+
+        galeria.addEventListener("click", (ev) => {
+          const galleryItem = ev.target.closest(".gallery-item");
+          if (!galleryItem) return;
+
+          const idx = Number(galleryItem.dataset.index);
+
+          carousel.to(idx);
+          modal.show();
+        });
+      });
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

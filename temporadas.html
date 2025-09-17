@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title  -->
+    <title>Westworld - Temporadas</title>
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="./img/westworld-logo-100.png" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos Propios  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #header {
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 60vh;
+      }
+      .overlay {
+        height: 60vh;
+      }
+      #header-content {
+        min-height: 60vh;
+      }
+      #poster-temporada {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="text-center container-fluid" id="header">
+      <div class="overlay d-lg-flex align-items-start justify-content-center">
+        <!-- Navegacion -->
+        <nav
+          class="navbar sticky-top navbar-expand-lg bg-transparent navbar-dark"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="./img/westworld-logo-100.png"
+                alt="Logo Westworld"
+                width="40"
+                height="40"
+              />
+            </a>
+            <button
+              id="btn-menu"
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">INICIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#reparto">REPARTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#temporadas"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >TEMPORADAS</a
+                  >
+                  <ul class="dropdown-menu text-left">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=1"
+                      >
+                        <img
+                          src="./img/posters/westworld-season1-thumb.jpg"
+                          alt="Poster Temporada 1"
+                          class="dropdown-poster"
+                        />
+                        T1 - The Maze
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=2"
+                      >
+                        <img
+                          src="./img/posters/westworld-season2-thumb.jpg"
+                          alt="Poster Temporada 2"
+                          class="dropdown-poster"
+                        />
+                        T2 - The Door
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=3"
+                      >
+                        <img
+                          src="./img/posters/westworld-season3-thumb.jpg"
+                          alt="Poster Temporada 3"
+                          class="dropdown-poster"
+                        />
+                        T3 - The New World
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="temporadas.html?temporada=4"
+                      >
+                        <img
+                          src="./img/posters/westworld-season4-thumb.jpg"
+                          alt="Poster Temporada 4"
+                          class="dropdown-poster"
+                        />
+                        T4 - The Choice
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./galeria.html">GALERIA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contacto.html">CONTACTO</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          id="header-content"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <!-- Informacion Hero Logo -->
+          <div class="logo">
+            <h1 class="titulo text-wrap">WESTWORLD</h1>
+            <h2
+              class="subtitulo-1 text-wrap"
+              style="color: #fff; margin-bottom: 20px"
+            ></h2>
+            <h3 class="subtitulo-2 text-wrap"></h3>
+            <a
+              id="btn-menu"
+              class="btn btn-outline-primary"
+              href="#temporada-header"
+            >
+              Explorar
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Arranca el Main -->
+    <main>
+      <!-- INFO TEMPORADA  -->
+      <section class="container align-items-center justify-content-center d-flex flex-column" id="temporada-header">
+        <article class="card mb-3 p-4" style="max-width: 840px">
+          <div class="row g-0">
+            <div class="col-md-5 d-flex align-items-center justify-content-center">
+              <img
+                src="..."
+                id="poster-temporada"
+                class="img-fluid rounded"
+                alt="Poster Westworld"
+              />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="subtitulo-1" style="text-decoration: underline"></h5>
+                <h4 class="card-title" id="titulo-temporada" style="
+                margin-bottom: 10px;
+                font-size: 1.8rem;
+                ">Card title</h4>
+                <p class="card-text">
+                 <p id="anio-temporada"></p>
+            <p id="cantidadEpisodios-temporada"></p>
+            <p id="duracionCapitulos-temporada"></p>
+            <p id="creadores"></p>
+            <p id="musica-temporada"></p>
+            <h4 style="text-decoration: underline">Resumen</h4>
+            <p id="resumen"></p>
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary subtitulo-1"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- INFO TRAILER  -->
+      <section
+        class="container align-items-center justify-content-center d-flex flex-column mb-4"
+        id="temporada-episodes"
+      >
+        <div class="row">
+          <div class="col-12 text-center">
+            <h3 style="text-decoration: underline">TRAILER</h3>
+          </div>
+        </div>
+         <div class="row mb-4">
+          <div class="col-12 text-center">
+         <iframe id="iframe-trailer" width="560" height="315" src="https://www.youtube.com/embed/kEkZdgWu7mM?si=tTaMTQW9GXPK-z7y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         </div>
+        </div>
+       </section>
+
+      <!-- INFO EPISODIOS  -->
+      <section
+        class="container align-items-center justify-content-center d-flex flex-column"
+        id="temporada-episodes"
+      >
+        <div class="row">
+          <div class="col-12 text-center">
+            <h3 style="text-decoration: underline">EPISODIOS</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div id="listado-episodios">
+            <!-- CONTENIDO EPISODIOS  -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+<!-- Footer  -->
+    <footer
+      class="container-fluid align-items-center justify-content-center text-center d-flex"
+      id="footer"
+    >
+      <div
+        class="row container align-items-center justify-content-evenly d-flex" style="max-width:850px"
+      >
+        <section class="col-12 col-lg-4 footer-temporadas text-center">
+          <h5>Temporadas</h5>
+          <div>
+            <a href="temporadas.html?temporada=1"
+              ><img
+                src="./img/posters/westworld-season1-thumb.jpg"
+                alt="Poster Temporada 1"
+                class="footer-poster"
+              />Temporada 1 - The Maze</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=2"
+              ><img
+                src="./img/posters/westworld-season2-thumb.jpg"
+                alt="Poster Temporada 2"
+                class="footer-poster"
+              />Temporada 2 - The Door</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=3"
+              ><img
+                src="./img/posters/westworld-season3-thumb.jpg"
+                alt="Poster Temporada 3"
+                class="footer-poster"
+              />Temporada 3 - The New World</a
+            >
+          </div>
+          <div>
+            <a href="temporadas.html?temporada=4"
+              ><img
+                src="./img/posters/westworld-season4-thumb.jpg"
+                alt="Poster Temporada 4"
+                class="footer-poster"
+              />Temporada 4 - The Choice</a
+            >
+          </div>
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <img
+            src="./img/westworld-logo-ancho.png"
+            alt="Logo Westworld"
+            width="150"
+          />
+        </section>
+
+        <section class="col-12 col-lg-4 text-center">
+          <div class="mb-5">
+            <h5>Producido por</h5>
+            <a href="https://www.hbomax.com/ar/es" target="_blank"><img src="./img/hbo-logo.png" alt="Logo HBO" width="80"></a>
+          </div>
+          <h5>Seguinos</h5>
+          <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.youtube.com/" target="_blank"><i class="bi bi-youtube"></i></a>
+          
+        </section>
+      </div>
+    </footer>
+    <footer class="text-center container-fluid" id="copyright">
+      <p>Copyright &copy; 2025 Westworld Fan Page</p>
+    </footer>
+<!-- Fin del Footer  -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/temporadasData.js"></script>
+    <script src="js/scriptTemporadas.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

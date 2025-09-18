@@ -8,12 +8,7 @@
     <!-- Favicon  -->
     <link rel="icon" type="image/png" href="./img/westworld-logo-100.png" />
     <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <!-- Bootstrap Icons  -->
     <link
       rel="stylesheet"
@@ -41,11 +36,15 @@
       #header-content {
         min-height: 60vh;
       }
+      #temporada-info {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
       #poster-temporada {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
       }
       #iframe-trailer {
-        max-width:100%;
+        max-width: 100%;
       }
     </style>
   </head>
@@ -94,8 +93,10 @@
                     aria-expanded="false"
                     >TEMPORADAS</a
                   >
-                  <ul class="dropdown-menu text-left" id="temporadas-submenu">
-                  </ul>
+                  <ul
+                    class="dropdown-menu text-left"
+                    id="temporadas-submenu"
+                  ></ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./galeria.html">GALERIA</a>
@@ -122,7 +123,7 @@
             <a
               id="btn-menu"
               class="btn btn-outline-primary"
-              href="#temporada-header"
+              href="#temporada-info"
             >
               Explorar
             </a>
@@ -134,59 +135,29 @@
     <!-- Arranca el Main -->
     <main>
       <!-- INFO TEMPORADA  -->
-      <section class="container align-items-center justify-content-center d-flex flex-column" id="temporada-header">
-        <article class="card mb-3 p-4" style="max-width: 840px">
-          <div class="row g-0">
-            <div class="col-md-5 d-flex align-items-center justify-content-center">
-              <img
-                id="poster-temporada"
-                class="img-fluid rounded"
-                alt="Poster Westworld"
-              />
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="subtitulo-1" style="text-decoration: underline"></h5>
-                <h4 class="card-title" id="titulo-temporada" style="
-                margin-bottom: 10px;
-                font-size: 1.8rem;
-                ">Card title</h4>
-                <p class="card-text">
-                 <p id="anio-temporada"></p>
-            <p id="cantidadEpisodios-temporada"></p>
-            <p id="duracionCapitulos-temporada"></p>
-            <p id="creadores"></p>
-            <p id="musica-temporada"></p>
-            <h4 style="text-decoration: underline">Resumen</h4>
-            <p id="resumen"></p>
-                </p>
-                <p class="card-text">
-                  <small class="text-body-secondary subtitulo-1"
-                    >Last updated 3 mins ago</small
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
+      <section
+        class="container align-items-center justify-content-center d-flex flex-column"
+        id="temporada-info"
+      >
+        <!-- CARD TEMPORADA  -->
       </section>
 
       <!-- INFO TRAILER  -->
       <section
         class="container align-items-center justify-content-center d-flex flex-column mb-4"
-        id="temporada-episodes"
+        id="temporada-trailer"
       >
         <div class="row">
           <div class="col-12 text-center">
             <h3 style="text-decoration: underline">TRAILER</h3>
           </div>
         </div>
-         <div class="row mb-4">
-          <div class="col-12 text-center">
-         <iframe id="iframe-trailer" width="560" height="315" src="https://www.youtube.com/embed/kEkZdgWu7mM?si=tTaMTQW9GXPK-z7y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         </div>
+        <div class="row mb-4">
+          <div class="col-12 text-center" id="temporada-trailer-iframe">
+            <!-- IFRAME YOUTUBE  -->
+          </div>
         </div>
-       </section>
+      </section>
 
       <!-- INFO EPISODIOS  -->
       <section
@@ -206,13 +177,14 @@
       </section>
     </main>
 
-<!-- Footer  -->
+    <!-- Footer  -->
     <footer
       class="container-fluid align-items-center justify-content-center text-center d-flex"
       id="footer"
     >
       <div
-        class="row container align-items-center justify-content-evenly d-flex" style="max-width:850px"
+        class="row container align-items-center justify-content-evenly d-flex"
+        style="max-width: 850px"
       >
         <section class="col-12 col-lg-4 footer-temporadas text-center">
           <h5>Temporadas</h5>
@@ -230,30 +202,33 @@
         <section class="col-12 col-lg-4 text-center">
           <div class="mb-5">
             <h5>Producido por</h5>
-            <a href="https://www.hbomax.com/ar/es" target="_blank"><img src="./img/hbo-logo.png" alt="Logo HBO" width="80"></a>
+            <a href="https://www.hbomax.com/ar/es" target="_blank"
+              ><img src="./img/hbo-logo.png" alt="Logo HBO" width="80"
+            /></a>
           </div>
           <h5>Seguinos</h5>
-          <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://x.com/" target="_blank"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.youtube.com/" target="_blank"><i class="bi bi-youtube"></i></a>
-          
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="https://x.com/" target="_blank"
+            ><i class="bi bi-twitter-x"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="bi bi-youtube"></i
+          ></a>
         </section>
       </div>
     </footer>
     <footer class="text-center container-fluid" id="copyright">
       <p>Copyright &copy; 2025 Westworld Fan Page</p>
     </footer>
-<!-- Fin del Footer  -->
+    <!-- Fin del Footer  -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <script src="js/temporadasData.js"></script> -->
-     <script src="js/script.js" type="module"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js" type="module"></script>
     <script src="js/scriptTemporadas.js" type="module"></script>
-    
   </body>
 </html>

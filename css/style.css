@@ -12,6 +12,7 @@
 
   /*Paleta propia*/
   --bs-color1: #527990;
+  --bs-color1b: #78a6c1;
   --bs-color2: #255267;
   --bs-color3: #182a35;
   --bs-color3b: #182a35c5;
@@ -68,6 +69,9 @@
   display: flex !important;
   align-items: center;
   gap: 10px;
+}
+.dropdown-item:active {
+  background-color: var(--bs-color6);
 }
 .dropdown-poster {
   width: 30px;
@@ -302,12 +306,6 @@ h3 {
   color: white;
 }
 
-/*TEMPORADAS*/
-
-#temporada-header {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
 /******* Media queries ********/
 
 @media (max-width: 768px) {

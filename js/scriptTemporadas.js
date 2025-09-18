@@ -1,33 +1,28 @@
+// Importo los datos de las temporadas
 import { westworld } from "./temporadasData.js";
 
-// Espero a que el DOM esté completamente cargado para ejecutar el script.
 document.addEventListener("DOMContentLoaded", function () {
-  // Verifico si el array 'westworld' con los datos de las temporadas existe.
+  // Verifico si el array con los datos de las temporadas existe
   if (typeof westworld !== "undefined" && westworld.length > 0) {
-    // Creo un objeto para manejar los parámetros de la URL.
+    // Creo un objeto para manejar los parámetros de la URL
     const params = new URLSearchParams(window.location.search);
-    // Obtengo el id de la URL. Será un string o null si no existe.
+    // Tomo el id de la URL (string o null si no existe)
     const idTemporada = params.get("temporada");
+    // Por defecto, la primera temporada
+    let temporadaSeleccionada = westworld[0];
 
-    let temporadaSeleccionada = westworld[0]; // Por defecto, la primera temporada.
-
-    // Si existe 'id' en la URL.
+    // Si vino una temporada por URL, la busco en el array
     if (idTemporada) {
-      // Convierto el id a un número entero y obtengo el índice del array (restando 1).
-      const indice = parseInt(idTemporada, 10) - 1;
-
-      // Verifico si el índice es válido y está dentro de los límites del array.
-      if (indice >= 0 && indice < westworld.length) {
-        temporadaSeleccionada = westworld[indice];
-      } else {
-        // Si el id no es válido muestro un mensaje en consola.
-        console.warn(
-          `El id de temporada '${idTemporada}' no es válido. Se mostrará la temporada 1.`
-        );
-      }
+      temporadaSeleccionada = westworld.find(
+        (temporada) => temporada.id === parseInt(idTemporada, 10)
+      );
+    } else {
+      console.log(
+        "La temporada llegó vacía en la URL, se carga la temporada 1 por defecto."
+      );
     }
 
-    // Carga los datos de la temporada seleccionada (o la de por defecto).
+    // Cargo los datos de la temporada seleccionada (o la de por defecto)
     cargarDatosTemporada(temporadaSeleccionada);
   } else {
     console.error(
@@ -37,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * Cargo los datos del objeto de temporada en los elementos del DOM.
- * @param {object} temporada - El objeto de la temporada para mostrar.
+ * Cargo los datos del objeto de temporada en los elementos del DOM
+ * @param {object} temporada - El objeto de la temporada para mostrar
  */
 function cargarDatosTemporada(temporada) {
-  // Valido que el objeto temporada no sea nulo o indefinido.
+  // Valido que el objeto temporada no sea nulo o indefinido
   if (!temporada) {
     console.error("El objeto de la temporada proporcionado es inválido.");
     return;
@@ -49,70 +44,76 @@ function cargarDatosTemporada(temporada) {
 
   // Referencia al title de la pagina
   const title = document.querySelector("title");
-
   // Referencias por clase
-  const subtituloH2 = document.querySelectorAll(".subtitulo-1");
+  const subtituloH2 = document.querySelector(".subtitulo-1");
   const subtituloH3 = document.querySelector(".subtitulo-2");
-
   // Referencias por ID
-  const poster = document.getElementById("poster-temporada");
-  const titulo = document.getElementById("titulo-temporada");
-  const subtitulo = document.getElementById("subtitulo-temporada");
-  const anio = document.getElementById("anio-temporada");
-  const episodios = document.getElementById("cantidadEpisodios-temporada");
-  const duracion = document.getElementById("duracionCapitulos-temporada");
-  const creadores = document.getElementById("creadores");
-  const musica = document.getElementById("musica-temporada");
-  const resumen = document.getElementById("resumen");
   const header = document.getElementById("header");
+  const temporadaInfo = document.getElementById("temporada-info");
+  const temporadaTrailer = document.getElementById("temporada-trailer-iframe");
   const episodiosContainer = document.getElementById("listado-episodios");
-  const iframeTrailer = document.getElementById("iframe-trailer");
 
-  // Asigno los datos de la temporada a los elementos del DOM referenciados.
+  // Asigno los datos de la temporada a los elementos del DOM
   if (title) {
     title.textContent = `Westworld - Temporada ${temporada.id}`;
   }
   if (subtituloH2) {
-    subtituloH2.forEach((element) => {
-      element.textContent = `Temporada ${temporada.id}`;
-    });
+    subtituloH2.textContent = `Temporada ${temporada.id}`;
   }
   if (subtituloH3) {
     subtituloH3.textContent = `"${temporada.titulo}"`;
   }
-  if (poster) {
-    poster.src = temporada.caratula;
-    poster.alt = `Póster de ${temporada.titulo}`;
-    poster.classList.add("img-fluid"); // Clase de Bootstrap para imágenes responsivas
-  }
-  if (titulo) {
-    titulo.textContent = `"${temporada.titulo}"`;
-  }
-  if (subtitulo) {
-    subtitulo.innerHTML = temporada.subtitulo;
-  }
-  if (anio) {
-    anio.innerHTML = `<strong>Año:</strong> ${temporada.anio}`;
-  }
-  if (episodios) {
-    episodios.innerHTML = `<strong>Episodios:</strong> ${temporada.numEpisodios}`;
-  }
-  if (duracion) {
-    duracion.innerHTML = `<strong>Duración x capítulo:</strong> ${temporada.duracionTipica}`;
+
+  // INFORMACION DE TEMPORADA
+  if (temporadaInfo) {
+    temporadaInfo.innerHTML = `<article class="card mb-3 p-4" style="max-width: 840px">
+          <div class="row g-0">
+            <div class="col-md-5 d-flex align-items-center justify-content-center">
+              <img
+                src="${temporada.caratula}"
+                alt="Poster Westworld Temporada ${temporada.id} - ${temporada.titulo}"
+                id="poster-temporada"
+                class="img-fluid rounded"
+              />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="subtitulo-1" style="text-decoration: underline">Temporada ${temporada.id}</h5>
+                <h4 class="card-title" style="margin-bottom: 10px;font-size: 1.8rem;">"${temporada.titulo}"</h4>
+                <p class="card-text">
+                  <p><strong>Año:</strong> ${temporada.anio}</p>
+                  <p><strong>Episodios:</strong> ${temporada.numEpisodios}</p>
+                  <p"><strong>Duración x capítulo:</strong> ${temporada.duracionTipica}</p>
+                  <p><strong>Creadores:</strong> ${temporada.creadores}</p>
+                  <p><strong>Música:</strong> ${temporada.musica}</p>
+                  <h4 style="text-decoration: underline">Resumen</h4>
+                  <p>${temporada.resumen}</p>
+                </p>
+                <p class="card-text">
+                  <small class="text-body-secondary">Temporada ${temporada.id}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>`;
   }
 
-  if (creadores) {
-    creadores.innerHTML = `<strong>Creadores:</strong> ${temporada.creadores}`;
+  // IFRAME TRAILER
+  if (temporadaTrailer && temporada.linkTrailer) {
+    temporadaTrailer.innerHTML = `<iframe
+              id="iframe-trailer"
+              width="560"
+              height="315"
+              src="${temporada.linkTrailer}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>`;
   }
-  if (musica) {
-    musica.innerHTML = `<strong>Música:</strong> ${temporada.musica}`;
-  }
-  if (resumen) {
-    resumen.innerHTML = `${temporada.resumen}`;
-  }
-  if (iframeTrailer && temporada.linkTrailer) {
-    iframeTrailer.src = temporada.linkTrailer;
-  }
+
+  // BACKGROUND PARA HEADER SEGUN TEMPORADA
   if (header) {
     switch (temporada.id) {
       case 1:
@@ -140,18 +141,18 @@ function cargarDatosTemporada(temporada) {
     header.style.backgroundRepeat = "no-repeat";
   }
 
-  /* EPISODIOS */
+  // LISTADO DE EPISODIOS
   if (episodiosContainer) {
     temporada.episodios.forEach((episodio) => {
       episodiosContainer.innerHTML += `
-    <article class="card mb-3 p-4" style="max-width: 840px">
+            <article class="card mb-3 p-4" style="max-width: 840px">
               <div class="row g-0">
                 <div
                   class="col-md-4 d-flex align-items-center justify-content-center"
                 >
                   <img
                     src="./img/westworld-logo-ancho-negro.png"
-                    class="img-fluid rounded-start"
+                    class="img-fluid"
                     alt="Logo Westworld Negro"
                     width="200"
                   />
@@ -164,12 +165,12 @@ function cargarDatosTemporada(temporada) {
                       <strong>Director:</strong> ${episodio.director}<br />
                       <strong>Guión:</strong> ${episodio.guion} <br />
                       <strong>Estreno:</strong> ${episodio.estreno} <br />
-                      <strong>Duracion:</strong> ${episodio.duracionMin} min <br />
+                      <strong>Duración:</strong> ${episodio.duracionMin} min <br />
                       <strong>Sinopsis:</strong> ${episodio.sinopsis}
                     </p>
                     <p class="card-text">
                       <small class="text-body-secondary"
-                        >Temporada ${temporada.id}, Episodio ${episodio.nro}</small
+                        >Temporada ${temporada.id} - Episodio ${episodio.nro}</small
                       >
                     </p>
                   </div>

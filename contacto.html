@@ -40,6 +40,14 @@
       iframe {
         width: 100%;
       }
+      .status-ok {
+        color: green;
+        font-weight: bold;
+      }
+      .status-error {
+        color: red;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -128,7 +136,13 @@
         </p>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            <form class="needs-validation" novalidate>
+            <form
+              id="formWestworld"
+              class="needs-validation"
+              novalidate
+              action="https://formspree.io/f/xqayzeda"
+              method="POST"
+            >
               <div class="mb-3">
                 <input
                   type="text"
@@ -179,6 +193,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
+            <div id="my-form-status" class="text-center"></div>
           </div>
         </div>
       </section>
@@ -267,11 +282,12 @@
     <script>
       (() => {
         "use strict";
+        // Validaciones de formulario
         const form = document.querySelector("#contacto form.needs-validation");
         if (!form) return;
 
         const emailInput = form.querySelector("#email");
-        // Regex para una validación de email más estricta, que busca un formato como "usuario@dominio.tld"
+        // Regex para una validación de email más estricta "usuario@dominio.com"
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         form.addEventListener("submit", (event) => {
@@ -295,6 +311,45 @@
           form.classList.add("was-validated");
         });
       })();
+
+      // Fetch para Mensaje de contacto enviado ok o error
+      var form = document.getElementById("formWestworld");
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              status.innerHTML =
+                "<p class='status-ok'>¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.</p>";
+              form.reset();
+              form.style.display = "none";
+            } else {
+              response.json().then((data) => {
+                if (Object.hasOwn(data, "errors")) {
+                  status.innerHTML = data["errors"]
+                    .map((error) => error["message"])
+                    .join(", ");
+                } else {
+                  status.innerHTML =
+                    "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
+                }
+              });
+            }
+          })
+          .catch((error) => {
+            status.innerHTML =
+              "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
+          });
+      }
+      form.addEventListener("submit", handleSubmit);
     </script>
     <script src="./js/script.js" type="module"></script>
   </body>

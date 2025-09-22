@@ -282,74 +282,77 @@
     <script>
       (() => {
         "use strict";
-        // Validaciones de formulario
-        const form = document.querySelector("#contacto form.needs-validation");
+
+        // Validaciones de formulario y manejo del envío
+        const form = document.querySelector("#formWestworld");
         if (!form) return;
 
+        // Lógica de validación
         const emailInput = form.querySelector("#email");
-        // Regex para una validación de email más estricta "usuario@dominio.com"
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // La función que maneja el envío
+        async function handleSubmit(event) {
+          event.preventDefault();
+          const status = document.getElementById("my-form-status");
+          const data = new FormData(event.target);
+
+          // Fetch
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                status.innerHTML =
+                  "<p class='status-ok'>¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.</p>";
+                form.reset();
+                form.style.display = "none";
+              } else {
+                response.json().then((data) => {
+                  if (Object.hasOwn(data, "errors")) {
+                    status.innerHTML = data["errors"]
+                      .map((error) => error["message"])
+                      .join(", ");
+                  } else {
+                    status.innerHTML =
+                      "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
+                  }
+                });
+              }
+            })
+            .catch((error) => {
+              status.innerHTML =
+                "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
+            });
+        }
 
         form.addEventListener("submit", (event) => {
           // Lógica de validación de email personalizada
           if (emailInput.value && !emailRegex.test(emailInput.value)) {
-            // Si el email no está vacío y no cumple con el formato, se establece un error personalizado.
-            // Este mensaje será usado por el navegador para el tooltip de error.
             emailInput.setCustomValidity(
               "Por favor, ingresá una dirección de email con formato válido (ej: nombre@dominio.com)."
             );
           } else {
-            // Si es válido (o está vacío, para que actúe la validación 'required'), se limpia el error.
             emailInput.setCustomValidity("");
           }
 
-          // Se procede con la validación estándar de Bootstrap
-          if (!form.checkValidity()) {
+          // Se verifica la validez del formulario
+          if (form.checkValidity()) {
+            // Si el formulario es válido, se llama a la función asíncrona
+            handleSubmit(event);
+          } else {
+            // Si no es válido, se evita el envío y se detiene la propagación
             event.preventDefault();
             event.stopPropagation();
           }
+
           form.classList.add("was-validated");
         });
       })();
-
-      // Fetch para Mensaje de contacto enviado ok o error
-      var form = document.getElementById("formWestworld");
-      async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("my-form-status");
-        var data = new FormData(event.target);
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then((response) => {
-            if (response.ok) {
-              status.innerHTML =
-                "<p class='status-ok'>¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.</p>";
-              form.reset();
-              form.style.display = "none";
-            } else {
-              response.json().then((data) => {
-                if (Object.hasOwn(data, "errors")) {
-                  status.innerHTML = data["errors"]
-                    .map((error) => error["message"])
-                    .join(", ");
-                } else {
-                  status.innerHTML =
-                    "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
-                }
-              });
-            }
-          })
-          .catch((error) => {
-            status.innerHTML =
-              "<p class='status-error'>¡Ups! Hubo un error, por favor intentalo mas tarde.</p>";
-          });
-      }
-      form.addEventListener("submit", handleSubmit);
     </script>
     <script src="./js/script.js" type="module"></script>
   </body>
